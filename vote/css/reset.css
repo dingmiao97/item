@@ -1,0 +1,172 @@
+﻿
+/* 样式清除 */
+    /* 默认边距清除 */
+    html,body,div,ul,li, h1,h2,h3,h4,h5,h6,p,dl,dt,dd,ol,
+    form,input,textarea,th,td,select{
+        margin: 0;
+        padding: 0;
+    }
+
+    html,body {
+        width:100%;
+        font-family: "Microsoft YaHei";
+        font-size: 14px;
+        color: #000;
+    }
+
+    /* h1,h2,h3, h4,h5,h6 {
+        font-weight: 400;
+    } */
+
+    ul,ol {
+        list-style: none;
+    }
+
+    img {
+        border: none;
+        vertical-align: middle;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    table {
+        border-collapse: collapse;
+        table-layout: fixed;
+    }
+    input[type="button"]{
+        cursor: pointer;
+    }
+    input,textarea {
+        outline: none;
+        border:1px solid #ccc;
+    }
+    textarea {
+        resize: none;
+    }
+    i,em{
+        font-style: normal;
+    }
+    b,strong{
+        font-weight:normal;
+    }
+
+
+    /* 公共样式 */
+/* 清除浮动 */
+    .fl {float: left}
+    .fr {float: right}
+
+    .clearfix:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .clearfix:after {zoom: 1;}
+
+    /* 子级全部 左浮动,给父级加, */
+    .fl_child>* { float: left;}
+    .fl_child:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .fl_child:after {
+        zoom: 1;
+    }
+
+    /* 子级全部右浮动 */
+    .fr_child>* {float: right;}
+    .fr_child:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .fr_child:after {
+        zoom: 1;
+    }
+
+/* 辅助样式 */
+
+/* 位置控制 */   
+.tc{
+    text-align: center; 
+ }
+ .rela{
+     position:relative;
+ }
+ .abso{
+     position:absolute;
+ }
+
+/* 单行文字溢出出现省略号 */
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 行内块     */
+    .block {
+        display: inline-block;
+    }
+
+ /* 常用背景颜色 */
+    .red{
+        background-color:red;
+    }
+    .blue{
+        background-color: blue;
+    }
+    .skyblue{
+        background-color: skyblue;
+    }
+
+
+/* 常用边框 */
+    .bdred{
+        border:1px solid red;
+    }
+    .bdgreen{
+        border: 1px solid green;
+    }
+    .bdblue{
+        border:1px solid blue;
+    }
+
+
+   .w{ 
+      width:1200px;
+      margin:0 auto;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

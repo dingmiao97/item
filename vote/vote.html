@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>电影购票-Mtime时光网</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/rocketTop.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/cityselect.css">
+    <link rel="stylesheet" href="./css/box-shadows.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.waterwheelCarousel.min.js"></script>
+     <script src="./js/cityselect.js"></script>
+    <script src="./js/rocketTop.js"></script>
+    <script src="./js/dm.js" ></script>
+   
+    <style type="text/css">
+      #carousel {
+        width:800px;
+        height: 300px;
+        display: relative;
+        margin: 0 auto;
+      }
+      #carousel img {
+        width: 200px;
+        height: 200px;
+        display: hidden; /* hide images until carousel prepares them */
+        cursor: pointer; /* not needed if you wrap carousel items in links */
+      }
+    </style>     
+
+<style>
+  body {
+      margin: 0;
+      padding: 0;
+      line-height: 1.5em;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      /* color: #ffffff; */
+      /* background: #250d0b url(images/templatemo_bg.jpg) top repeat-x; */
+  }
+  
+  /*start booking*/
+  
+  #screen{
+      display: block;
+      width: 600px;
+      color:#fff;
+      font-weight: bold;
+      border: 3px solid darkorange;
+      text-align: center;
+      margin: 10px auto 20px auto;
+      background-color: darkorange;
+  }
+  #seats{
+      border: 5px solid sienna;
+      width: 600px;
+      margin: 0 auto;
+      padding: 10px;
+  }
+  .seat {
+      float: left;
+      width: 32px;
+      box-sizing: border-box;
+      color: #fff;
+      padding: 1px;
+      height: 30px;
+      border: 1px solid coral;
+      margin: 5px;
+      border-bottom: 3px solid #F35E4F;
+      cursor: pointer;
+      line-height: 30px;
+      text-align: center;
+  }
+  .seatsRaw {
+      display:inline-block;
+  }
+  #booking_desc {
+      width: 550px;
+      /* border: 1px solid red; */
+      background-color: brown;
+      color: #FAFAFA;
+      margin: 30px auto;
+      padding: 10px;
+      display: table;
+      }
+  .booking_left, .booking_right {
+      width:250px;
+      float:left;
+      }
+  #total span {
+      font-size: 16px;
+      color: burlywood;
+      }
+  #errMsg{
+      color: #FF7777;
+      }
+  /*end booking*/
+  </style>
+   
+
+
+</head>
+<body>  
+  <div>
+      <div class="header clearfix">
+
+          <!-- logo部分 -->
+          <a href="#" class="logo"></a>
+          <!-- 左侧导航部分 -->
+          <div class="left_nav">
+              <ul>
+                  <li>
+                      <a href="../index/index.html" class="cur">
+                       
+                          首页
+                          <span class="current"></span>
+                      </a>              
+                  </li>
+                  <li>
+                      <a href="#">
+                      
+                          购票
+                          <span></span>
+                      </a>              
+                  </li>
+                  <li>
+                      <a href="../mall/mall.html">
+                     
+                          正版商城
+                          <span></span>
+                      </a>              
+                  </li>
+                  <li>
+                      <a href="../j_index/j_index.html">
+                      
+                          新闻
+                          <span></span>
+                      </a>              
+                  </li>
+                  <li>
+                      <a href="../video/video.html">
+                    
+                          视频
+                          <span></span>
+                          <b>热</b>
+                      </a>              
+                  </li>
+                  <li>
+                      <a href="../community/community.html">
+                     
+                          社区
+                          <span></span>
+                      </a>              
+                  </li>
+                  <li>
+                      <a href="../svip/svip.html">
+                     
+                          会员中心
+                          <span></span>
+                      </a>              
+                  </li>
+                  <li>
+                      <a href="../game/game.html">
+                     
+                          游戏中心
+                          <span></span>
+                      </a>              
+                  </li>
+                  <li>
+                      <a href="#">
+                          其他
+                          <span></span>
+                      </a>              
+                  </li>
+              </ul>
+          </div>
+          <!-- 右侧导航部分 -->
+          <div class="right_nav">
+              <ul>
+                  <li>
+                      <a href="#" class="a_download">
+                          <i class="iconfont icon-shouji1"></i>
+                          <span>App下载
+                              <img src="./images/download1.jpg" alt="" class="a_download_img">
+                          </span>
+                          <s class="iconfont icon-jiantou1"></s>
+                          <span></span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#">
+                          登录/注册
+                      </a>
+                  </li>
+                  <!-- 购物车部分 -->
+                  <li>
+                      <a href="#" class="right_nav_a">
+                          <ins class="iconfont icon-gouwuche"></ins>
+                          <span class="right_nav_sp">0</span>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  
+  </div>
+     <!-- //头部导航 -->
+  
+
+
+
+
+
+
+
+    <!-- //头部开始 -->
+    <div class="l_dhz">
+
+     <input type="button" value="关闭">
+    </div>
+         <!-- //头部开始 -->
+          <div class="l_logo w">
+             <ul>
+               <li>
+                 <a href="####"><img src="./images/钢铁侠.jpg" alt=""></a>
+            
+              </li>
+               <li class="l-list"><a href="####"><img src="./images/魔兽.jpg" alt=""></a>
+
+              </li>
+              <li>
+                  <a href="####"><img src="./images/不肯.jpg" alt=""></a>
+              </li>
+              <li>
+                  <a href="####"><img src="./images/哪吒.jpg" alt=""></a>
+              </li>
+             </ul>
+  
+            <div class="l_btn">
+               <a href="javascript:;" class="l_lbb"><span class="iconfont">&#xe65e;</span></a>
+               <a href="javascript:;" class=" l_rbb"><span class="iconfont">&#xe65e;</span></a>
+
+            </div>   
+            <div class="l_circle">
+              <!-- <span class="active"></span>
+              <span ></span> -->
+            </div>
+              
+          </div>
+
+             <script src="./js/animation.js"></script>
+
+          <script src="./js/lbt.js"></script>
+   
+       
+      <!-- 头部导航 -->
+    <div class="l_nav">
+      <div class="w">
+         <div class="l_box">
+             <input type="text" class="cityinput" id="citySelect" placeholder="请输入城市">
+
+         </div>
+         <script>
+         var test=new Vcity.CitySelector({input:'citySelect'});               
+</script>
+       <!-- //右边按钮 -->
+
+         <div class="l_r_box">
+          <div class="l_r_box1">
+            <div class="l_rbo">
+             <span>选电影</span>
+             <a href="javascript:;"><span class="iconfont l_rj">&#xe612;</span></a>
+         </div>
+         <!-- //电影隐藏栏 -->
+             <div class="l_select">
+              <div class="l_input">
+                <span>输入影片名称快速定位</span>
+                <i class="iconfont icon-sousuo"></i>
+              </div>
+
+              <ul>
+                <li>
+                  <a href="javascript:;">
+                    <span>速度与激情:特别行动</span>
+                    <b>7.1</b>
+                  </a>
+                </li>
+                <br>
+                <br>
+                <li>
+                   <a href="javascript:;">
+                     <span>哪吒之魔童降世</span>
+                     <b>8.4</b>
+                   </a>
+                 </li>
+                 <br>
+                 <br>
+                 <li>
+                    <a href="javascript:;">
+                      <span>铤而走险</span>
+                      <b>6.8</b>
+                    </a>
+                  </li>
+                  <br>
+                  <br>
+                  <li>
+                     <a href="javascript:;">
+                       <span>深夜食堂</span>
+                       <b>6.5</b>
+                     </a>
+                   </li>
+                   <br>
+                   <br>
+                   <li>
+                      <a href="javascript:;">
+                        <span>烈火·英雄</span>
+                        <b>6.9</b>
+                      </a>
+                    </li>
+                    <br>
+                    <br>
+                    <li>
+                       <a href="javascript:;">
+                         <span>铤而走险</span>
+                         <b>6.8</b>
+                       </a>
+                     </li>
+                     <br>
+                     <br>
+                     <li>
+                        <a href="javascript:;">
+                          <span>骡子</span>
+                          <b>7.0</b>
+                        </a>
+                      </li>
+                      <br>
+                      <br>
+                      <li>
+                         <a href="javascript:;">
+                           <span>愤怒的小鸟</span>
+                           <b>7.1</b>
+                         </a>
+                       </li>
+                       <br>
+                       <br>
+                       <li>
+                          <a href="javascript:;">
+                            <span>死寂逃亡</span>
+                          </a>
+                        </li>
+                        <br>
+                        <br>
+                        <li>
+                           <a href="javascript:;">
+                             <span>送我上青云</span>
+                             <b>7.3</b>
+                           </a>
+                         </li>
+                         <br>
+                         <br>
+                         <li>
+                            <a href="javascript:;">
+                              <span>共青云</span>
+                              <b>7.1</b>
+                            </a>
+                          </li>
+                          <br>
+                          <br>
+                          <li>
+                             <a href="javascript:;">
+                               <span>使徒行者</span>
+                               <b>7.1</b>
+                             </a>
+                           </li>
+              </ul>
+                                   
+             </div>
+         
+            </div>
+          <div class="l_r_box2">
+            <div class="l_rbo2">
+              <span>选影院</span>
+              <a href="javascript:;"><span class="iconfont l_rj1">&#xe612;</span></a>
+         </div>
+         <!-- //影院隐藏栏 -->
+              <div class="l_option">
+                  <div class="l_option_b">
+                  <div class="l_option_input">
+                    <span>输入影片名称快速定位</span>
+                    <i class="iconfont icon-sousuo"></i> 
+                  </div>
+                  <h5>当前共有170家影院</h5>
+                 </div>
+    
+                 <div class="l_option_bot">
+                   <p>
+                     <span>昌平区</span>
+                      <a href="javascript:;">首都电影院昌平店</a>
+                     <a href="javascript:;">北京万达影城昌平区</a> 
+                     <a href="javascript:;">北京万达影城天通苑区</a>
+                     <a href="javascript:;">北京沃美影城</a>
+                     <a href="javascript:;">大地影院（顺义区）</a>
+                     <a href="javascript:;">华联影城</a>
+                     <a href="javascript:;">保利国际影城</a>
+                     <a href="javascript:;">新龙博海影城</a>
+                     <a href="javascript:;">中影星美国际影城温都水城店</a>
+                   </p>
+                   <p class="l_option_p">
+                    <span>朝阳区</span>
+                    <a href="javascript:;">金逸北京双桥店</a>
+                   <a href="javascript:;">金逸国际影城</a> 
+                   <a href="javascript:;">新影联.华谊兄弟影院</a>
+                   <a href="javascript:;">北京紫光影城</a>
+                   <a href="javascript:;">朝阳剧场</a>
+                   <a href="javascript:;">劲松电影院</a>
+                   <a href="javascript:;">UME国际影城（双井）</a>
+                   <a href="javascript:;">北京东都影城</a>
+                   <a href="javascript:;">中影星美国际影城温都水城店</a>
+                   <a href="javascript:;">北京CBD万达广场店</a>
+                   <a href="javascript:;">北京K酷影院</a>
+                   <a href="javascript:;">北京保利</a>
+                   <a href="javascript:;">北京比高电影</a>
+                   <a href="javascript:;">风华园汽车影院</a>
+                   <a href="javascript:;">米瑞酷影院</a>
+                   <a href="javascript:;">艾米1985影院</a>
+                   <a href="javascript:;">中影CFR国际影城（望京店）</a>
+    
+                   </p>
+                   
+                   <p class="l_option_p">
+                    <span>大兴区</span>
+                    <a href="javascript:;">金逸北京双桥店</a>
+                   <a href="javascript:;">大兴国际影城</a> 
+                   <a href="javascript:;">新影联.华谊兄弟影院</a>
+                   <a href="javascript:;">北京大兴紫光影城</a>
+                   <a href="javascript:;">朝阳剧场</a>
+                   <a href="javascript:;">劲松电影院</a>
+                   <a href="javascript:;">UME国际影城（双井）</a>
+                   <a href="javascript:;">北京东都影城</a>
+                   <a href="javascript:;">中影星美国际影城温都水城店</a>
+                   <a href="javascript:;">北京CBD万达广场店</a>
+                   <a href="javascript:;">北京大兴R酷影院</a>
+                   <a href="javascript:;">北京保利大兴店</a>
+                   <a href="javascript:;">北京比高电影</a>
+                   <a href="javascript:;">风华园汽车影院</a>
+                   <a href="javascript:;">艾米1985影院</a>
+                   <a href="javascript:;">中影CFR国际影城（大兴店）</a>
+                   </p>
+                    
+                   <p class="l_option_p">
+                    <span>崇文区</span>
+                    <a href="javascript:;">北京百老汇影城国际</a>
+                   <a href="javascript:;">北京搜秀影城</a> 
+                  
+                   </p>
+    
+                   <p class="l_option_p">
+                    <span>东城区</span>
+                    <a href="javascript:;">青春光线</a>
+                   <a href="javascript:;">大兴国际影城</a> 
+                   <a href="javascript:;">新影联.华谊兄弟影院</a>
+                   <a href="javascript:;">北京大兴紫光影城</a>
+                   <a href="javascript:;">朝阳剧场</a>
+                   <a href="javascript:;">劲松电影院</a>
+                   <a href="javascript:;">UME国际影城（双井）</a>
+                   <a href="javascript:;">北京东都影城</a>
+                   <a href="javascript:;">中影星美国际影城温都水城店</a>
+                   <a href="javascript:;">北京CBD万达广场店</a>
+                   <a href="javascript:;">北京大兴R酷影院</a>
+                   <a href="javascript:;">北京保利大兴店</a>
+                   </p>
+                 
+                 </div>
+    
+                 </div>
+         
+            </div>
+           <div class="l_r_box3">
+              <span>选时间</span>
+              <a href="javascript:;"><span class="iconfont l_rj2">&#xe612;</span></a>
+           </div>
+           <div class="l_r_box4">
+             <a href="javascript:;"><span>选座购票</span></a>
+           </div>
+          </div>
+
+      </div>
+
+
+    </div>
+
+        
+    <!-- 中间内容区域 -->
+     
+    <div class="l_content">
+       <div class="w">
+          <!-- 头部内容 -->
+         <div class="l_content_top">
+           <div class="l_content_top1">
+          <span>正在热映</span>
+          <h1>52</h1>
+          <span>部</span>
+         </div>
+          <div class="l_content_top2">
+            <ul>
+              <li><a href="javascript:;">全部</a><span>|</span></li>
+              <li><a href="javascript:;">3D</a><span>|</span></li>
+              <li><a href="javascript:;">IMAX</a><span>|</span></li>
+              <li><a href="javascript:;">喜剧</a><span>|</span></li>
+              <li><a href="javascript:;">动画</a><span>|</span></li>
+              <li><a href="javascript:;">冒险</a><span>|</span></li>
+              <li><a href="javascript:;">动作</a><span>|</span></li>
+              <li><a href="javascript:;">爱情</a></li>
+            </ul>
+          </div>
+         <div class="l_content_top3">
+       <input type="text" value="搜索影片">
+       <i class="iconfont icon-sousuo"></i>
+
+         </div>
+
+        <script>
+           var input = document.querySelector('.l_content_top3 input');
+
+           input.onfocus = function(){
+
+              this.value = '';
+
+           }
+           input.onblur = function(){
+            if(this.value.length < 1) 
+            this.value='搜索影片';
+           }
+        
+        </script>
+
+
+
+        </div>
+           <div class="l_lr_box">
+        <div class="l_left_img">
+          <a href="javascript:;"><img src="./images/L_7.jpg" alt=""></a> 
+          <div class="l_left_img1">
+            总评分
+            <span>7.1</span>
+          </div> 
+           <div class="l_left_img2">
+               <a href="javascript:;"><span>速度与激情:特别行动</span></a>
+               <p>135分钟-  动作  /  冒险</p>
+           </div>
+        
+           <div class="l_left_img3">
+             <p>巨石斯坦森最佳损友火力全开</p>
+           </div>
+
+           <div class="l_left_img4">
+             <span>25</span>
+             <h5>元起</h5>
+           </div>
+
+        <div class="l_left_img5">
+           <a href="javascript:;">选座购票</a> 
+
+        </div>
+
+
+        </div>
+          
+         <div class="l_right_img bShadow-9">
+           <div class="l_right_img1">
+         <a href="javascript:;"><img src="./images/L_5.jpg" alt=""></a> 
+          <span>8.4</span>
+          <h4>3D</h4> 
+        </div>
+           <div class="l_right_img2">
+            <a href="javascript:;">哪吒之魔童降世</a>
+            <p>110分钟-  动画  /  喜剧 </p>
+            <p>172家影院上映1761场</p>
+            <h6>不信，所谓命中注定</h6>
+            <div class="border">
+                选座购票
+            </div>
+           </div>
+
+
+         </div>
+         
+         <div class="l_right_img bShadow-9">
+            <div class="l_right_img1">
+          <a href="javascript:;"><img src="./images/L_3.jpg" alt=""></a> 
+           <span>6.8</span>
+         </div>
+            <div class="l_right_img2">
+             <a href="javascript:;">铤而走险</a>
+             <p>103分钟-  剧情  /  犯罪 </p>
+             <p>164家影院上映794场</p>
+             <h6>大鹏欧豪雨夜亡命追击</h6>
+             <div class="border">
+                 选座购票
+             </div>
+            </div>
+ 
+ 
+          </div>
+
+          <div class="l_right_img bShadow-9">
+              <div class="l_right_img1">
+            <a href="javascript:;"><img src="./images/L_6.jpg" alt=""></a> 
+             <span>6.4</span>
+           </div>
+              <div class="l_right_img2">
+               <a href="javascript:;">女王的柯基</a>
+               <p>90分钟-  动画 /  喜剧</p>
+               <p>158家影院上映715场</p>
+               <h6>皇家首席狗狗流落民间</h6>
+               <div class="border">
+                   选座购票
+               </div>
+              </div>
+   
+   
+            </div>
+
+            <div class="l_right_img bShadow-9">
+                <div class="l_right_img1">
+              <a href="javascript:;"><img src="./images/L_9.jpg" alt=""></a> 
+               <span>8.1</span>
+               <h4>3D</h4> 
+             </div>
+                <div class="l_right_img2">
+                 <a href="javascript:;">烈火•英雄</a>
+                 <p>120分钟-  灾难  /  动作 </p>
+                 <p>133家影院上映500场</p>
+                 <h6>黄晓明杜江演绎消防英雄</h6>
+                 <div class="border">
+                     选座购票
+                 </div>
+                </div>
+     
+     
+              </div>
+
+              <div class="l_right_img bShadow-9">
+                  <div class="l_right_img1">
+                <a href="javascript:;"><img src="./images/L_14.jpg" alt=""></a> 
+                 <span>8.1</span>
+                 <h4>3D</h4> 
+               </div>
+                  <div class="l_right_img2">
+                   <a href="javascript:;">愤怒的小鸟</a>
+                   <p>96分钟-  动画  /  冒险 </p>
+                   <p>133家影院上映209场</p>
+                   <h6>小鸟小猪遭遇危机对抗</h6>
+                   <div class="border">
+                       选座购票
+                   </div>
+                  </div>
+       
+       
+                </div>
+
+
+                <div class="l_right_img bShadow-9">
+                    <div class="l_right_img1">
+                  <a href="javascript:;"><img src="./images/L_26.jpg" alt=""></a> 
+                   <span>7.1</span>
+                   <h4>3D</h4> 
+                 </div>
+                    <div class="l_right_img2">
+                     <a href="javascript:;">爱宠大机密2</a>
+                     <p>86分钟-  动画  /  冒险 </p>
+                     <p>33家影院上映109场</p>
+                     <h6>爱宠受大家喜爱</h6>
+                     <div class="border">
+                         选座购票
+                     </div>
+                    </div>
+         
+         
+                  </div>
+           
+
+    </div>
+         <!-- 更多 -->
+         
+  <div class="l_money">
+
+     <div class="l_btn_g">
+             <a href="javascript:;">
+            <i class="iconfont icon-xiangxiajiantou"></i>
+            <span>更多</span>
+            </a>
+    </div>
+   
+     <div class="l_content_images">
+    <div class="l_content_img bShadow-4">
+        <div class="l_content_img1">
+      <a href="javascript:;"><img src="./images/L_8.jpg" alt=""></a> 
+       <span>8.0</span>
+     </div>
+        <div class="l_content_img2">
+         <a href="javascript:;">死寂逃亡</a>
+         <p>90分钟-  科幻  /  恐怖 </p>
+         <p>122家影院上映176场</p>
+         <h6>怪兽袭击全家陷入无声惊悚</h6>
+         <div class="border">
+             选座购票
+         </div>
+        </div>
+
+
+      </div>
+
+      <div class="l_content_img bShadow-4">
+          <div class="l_content_img1">
+        <a href="javascript:;"><img src="./images/L_12.jpg" alt=""></a> 
+         <span>7.7</span>
+       </div>
+          <div class="l_content_img2">
+           <a href="javascript:;">骡子</a>
+           <p>112分钟-  犯罪  /  剧情 </p>
+           <p>75家影院上映176场</p>
+           <h6>八旬老人涉毒犯险</h6>
+           <div class="border">
+               选座购票
+           </div>
+          </div>
+  
+  
+        </div>
+
+        <div class="l_content_img bShadow-4">
+            <div class="l_content_img1">
+          <a href="javascript:;"><img src="./images/L_11.jpg" alt=""></a> 
+           <span>7.6</span>
+         </div>
+            <div class="l_content_img2">
+             <a href="javascript:;">古田军号</a>
+             <p>120分钟-  剧情  /  战争 </p>
+             <p>62家影院上映146场</p>
+             <div class="border">
+                 选座购票
+             </div>
+            </div>
+    
+    
+          </div>
+
+
+          <div class="l_content_img bShadow-4">
+              <div class="l_content_img1">
+            <a href="javascript:;"><img src="./images/L_21.jpg" alt=""></a> 
+             <span>7.0</span>
+           </div>
+              <div class="l_content_img2">
+               <a href="javascript:;">昆虫总动员</a>
+               <p>92分钟-  冒险  /  剧情 </p>
+               <p>65家影院上映116场</p>
+               <h6>昆虫梦之队重组历险</h6>
+               <div class="border">
+                   选座购票
+               </div>
+              </div>
+      
+      
+            </div>
+
+
+         <div class="l_content_img bShadow-4">
+                <div class="l_content_img1">
+              <a href="javascript:;"><img src="./images/L_53.jpg" alt=""></a> 
+               <span>7.0</span>
+             </div>
+                <div class="l_content_img2">
+                 <a href="javascript:;">送我上青云</a>
+                 <p>99分钟-  爱情  /  剧情 </p>
+                 <p>46家影院上映116场</p>
+                 <h6>姚晨直面当代女性生存痛点</h6>
+                 <div class="border">
+                     选座购票
+                 </div>
+                </div>
+        
+        
+          </div>
+
+        <div class="l_content_img bShadow-4">
+                  <div class="l_content_img1">
+                <a href="javascript:;"><img src="./images/L_10.jpg" alt=""></a> 
+                 <span>7.0</span>
+               </div>
+                  <div class="l_content_img2">
+                   <a href="javascript:;">共同命运</a>
+                   <p>88分钟-  记录片  /  剧情 </p>
+                   <p>49家影院上映78场</p>
+                   <h6>“一带一路”沿线国家的故事</h6>
+                   <div class="border">
+                       选座购票
+                   </div>
+                  </div>
+          
+          
+        </div>
+  
+          <div class="l_content_img bShadow-4">
+                    <div class="l_content_img1">
+                  <a href="javascript:;"><img src="./images/L_13.jpg" alt=""></a> 
+                   <span>7.0</span>
+                 </div>
+                    <div class="l_content_img2">
+                     <a href="javascript:;">红星照耀中国</a>
+                     <p>109分钟-  冒险  /  战争 </p>
+                     <p>39家影院上映109场</p>
+                     <div class="border">
+                         选座购票
+                     </div>
+                    </div>
+            
+            
+          </div>
+
+         <div class="l_content_img bShadow-4">
+                      <div class="l_content_img1">
+                    <a href="javascript:;"><img src="./images/L_15.jpg" alt=""></a> 
+                     <span>7.0</span>
+                   </div>
+                      <div class="l_content_img2">
+                       <a href="javascript:;">保持沉默</a>
+                       <p>99分钟-  悬疑  /  犯罪 </p>
+                       <p>46家影院上映21场</p>
+                       <h6>吴镇宇周迅法庭争辩“弑母”大案</h6>
+                       <div class="border">
+                           选座购票
+                       </div>
+                      </div>
+              
+              
+          </div>
+
+          <div class="l_content_img bShadow-4">
+                  <div class="l_content_img1">
+                   <a href="javascript:;"><img src="./images/L_34.png" alt=""></a> 
+                      
+                  </div>
+                   <div class="l_content_img2">
+                 <a href="javascript:;">福星高照朱小八</a>
+                <p>88分钟-  动画  /  冒险 </p>
+              <p>9家影院上映21场</p>
+                  <div class="border">
+                      选座购票
+                      </div>
+                     </div>
+                
+                
+           </div>
+
+        <div class="l_content_img bShadow-4">
+                          <div class="l_content_img1">
+                        <a href="javascript:;"><img src="./images/L_54.jpg" alt=""></a> 
+                         <span>7.6</span>
+                       </div>
+                          <div class="l_content_img2">
+                           <a href="javascript:;">狮子王</a>
+                           <p>119分钟-  冒险  /  动画 </p>
+                           <p>39家影院上映67场</p>
+                           <div class="border">
+                               选座购票
+                           </div>
+                          </div>
+                  
+                  
+         </div>
+
+         <div class="l_content_img bShadow-4">
+                            <div class="l_content_img1">
+                          <a href="javascript:;"><img src="./images/L_50.jpg" alt=""></a> 
+                           <span>6.6</span>
+                         </div>
+                            <div class="l_content_img2">
+                             <a href="javascript:;">银河补习班</a>
+                             <p>119分钟-  家庭  /  剧情 </p>
+                             <p>39家影院上映67场</p>
+                             <div class="border">
+                                 选座购票
+                             </div>
+                            </div>
+                    
+                    
+         </div>
+
+          <div class="l_content_img bShadow-4">
+                              <div class="l_content_img1">
+                            <a href="javascript:;"><img src="./images/L_61.jpg" alt=""></a> 
+                             <span>7.6</span>
+                           </div>
+                              <div class="l_content_img2">
+                               <a href="javascript:;">冰雪女王</a>
+                               <p>89分钟-  奇幻  /  动画 </p>
+                               <p>6家影院上映37场</p>
+                               <div class="border">
+                                   选座购票
+                               </div>
+                              </div>
+                      
+                      
+          </div>
+
+          <div class="l_content_img bShadow-4">
+                 <div class="l_content_img1">
+                 <a href="javascript:;"><img src="./images/L_22.jpg" alt=""></a> 
+                 <span>7.2</span>
+                  </div>
+            <div class="l_content_img2">
+              <a href="javascript:;">昨日奇迹</a>
+                <p>116分钟-  喜剧  /  动画 </p>
+               <p>29家影院上映67场</p>
+               <div class="border">
+                  选座购票
+                  </div>
+                  </div>
+                            
+                            
+           </div>
+
+           <div class="l_content_img bShadow-4">
+                  <div class="l_content_img1">
+                <a href="javascript:;"><img src="./images/L_30.jpg" alt=""></a> 
+                 <span>7.6</span>
+               </div>
+                  <div class="l_content_img2">
+                   <a href="javascript:;">花椒之味</a>
+                   <p>119分钟-  爱情  /  剧情 </p>
+                   <p>19家影院上映27场</p>
+                   <div class="border">
+                       选座购票
+                   </div>
+                  </div>
+          
+          
+           </div>
+
+         <div class="l_content_img bShadow-4">
+                    <div class="l_content_img1">
+                  <a href="javascript:;"><img src="./images/L_28.jpg" alt=""></a> 
+                   <span>5.6</span>
+                 </div>
+                    <div class="l_content_img2">
+                     <a href="javascript:;">宝莱坞机器人2.0</a>
+                     <p>109分钟-  冒险  /  科幻 </p>
+                     <p>9家影院上映17场</p>
+                     <div class="border">
+                         选座购票
+                     </div>
+                    </div>
+            
+            
+          </div>
+
+         <div class="l_content_img bShadow-4">
+                      <div class="l_content_img1">
+                    <a href="javascript:;"><img src="./images/L_44.jpg" alt=""></a> 
+                     <span>6.6</span>
+                   </div>
+                      <div class="l_content_img2">
+                       <a href="javascript:;">冷血追击</a>
+                       <p>119分钟-  动作  /  犯罪 </p>
+                       <div class="border">
+                           选座购票
+                       </div>
+                      </div>
+              
+              
+         </div>
+
+         <div class="l_content_img bShadow-4">
+                        <div class="l_content_img1">
+                      <a href="javascript:;"><img src="./images/L_57.jpg" alt=""></a> 
+                       <span>5.6</span>
+                     </div>
+                        <div class="l_content_img2">
+                         <a href="javascript:;">名侦探柯南</a>
+                         <p>119分钟-  动作  /  动画 </p>
+                         <div class="border">
+                             选座购票
+                         </div>
+                        </div>
+                
+         </div>
+
+         <div class="l_content_img bShadow-4">
+                          <div class="l_content_img1">
+                        <a href="javascript:;"><img src="./images/L_51.jpg" alt=""></a> 
+                         <span>7.6</span>
+                       </div>
+                          <div class="l_content_img2">
+                           <a href="javascript:;">友情以上</a>
+                           <p>118分钟-  爱情  /  动画 </p>
+                           <div class="border">
+                               选座购票
+                           </div>
+                          </div>
+                
+                  
+         </div>
+
+     </div> 
+
+      <!-- //收回 -->
+ 
+     <div class="l_btn_s">
+
+        <a href="javascript:;">
+            <span class="iconfont is">&#xe62e;</span>
+            <span>收回</span>
+            </a>
+</div>
+
+     </div>
+ 
+     </div>
+    
+    </div>
+
+
+     <!-- 中下内容区域 -->
+
+      <div class="l_menu">
+       <div class="w">
+         <div id="carousel">
+          <img src="./images/115.jpg" alt="Image 1" />
+          <img src="./images/L_29.jpg" alt="Image 2" />
+          <img src="./images/L_34.png" alt="Image 3" />
+          <img src="./images/L_38.jpg" alt="Image 4" />
+          <img src="./images/L_16.jpg" alt="Image 5" />
+          <img src="./images/L_18.jpg" alt="Image 5" />
+          <img src="./images/L_23.jpg" alt="Image 5" />
+          <img src="./images/L_29.jpg" alt="Image 5" />
+          <img src="./images/L_32.jpg" alt="Image 5" />
+          <img src="./images/L_34.png" alt="Image 5" />
+          <img src="./images/L_40.jpg" alt="Image 5" />
+          <img src="./images/L_50.jpg" alt="Image 5" />
+          <img src="./images/L_45.jpg" alt="Image 5" />
+          <img src="./images/L_62.jpg" alt="Image 5" />
+          <img src="./images/L_65.jpg" alt="Image 5" />
+        </div>
+
+        </div> 
+
+          </div> 
+        <script>
+      
+        $(document).ready(function() {
+         
+          $("#carousel").waterwheelCarousel({
+      // include options like this:
+      // (use quotes only for string values, and no trailing comma after last option)
+      // option: value,
+      // option: value
+            preload :true,
+           carouselSpeed:1000,
+           autoPlay:2000,
+           stopOnHover:false,
+            pauseOnHover: true,
+             animationEasing:'linear'
+     
+    });
+  });
+        
+        </script> 
+
+   <!-- //电影机构 -->
+           
+       <div class="l_cinema">
+        <div class="w">
+         <div class="l_cinema_1">
+           <div class="l_cinema_2">
+
+          <h4>北京</h4>
+          <span>218</span>
+          <h5>家影院</h5>
+          <a href="javascript:;">商圈及地铁沿线<span class="iconfont">&#xe612;</span></a>
+          </div>
+
+           <div class="l_cinema_3">
+               
+                <ul>
+                  <li><a href="javascript:;">购票</a></li>
+                  <li><a href="javascript:;">停车场</a></li>
+                  <li><a href="javascript:;">3D</a></li>
+                  <li><a href="javascript:;">IMAX</a></li>
+                  <li><a href="javascript:;">4DX</a></li>
+                </ul>
+           </div> 
+
+
+           <div class="l_cinema_4">
+              <input type="text" value="搜索影片">
+              <i class="iconfont cinemas icon-sousuo"></i>
+       
+                </div>
+       <script>
+        var input = document.querySelector('.l_cinema_4 input');
+
+          input.onfocus = function(){
+             this.value = '';
+          }
+         input.onblur = function(){
+           if(this.value.length < 1) 
+            this.value='搜索影片';
+         }
+       </script>
+
+
+                  
+         </div>
+
+          
+
+
+
+        </div>
+
+
+
+      </div>
+
+       <div class="l_slid">
+         <div class="w">
+           <div class="l_slid_1">
+            <span>以下影城均非时光网自营</span>
+         </div>
+  </div>
+
+      </div> 
+
+      <!-- //影视机构 -->
+       <div class="l_sub">
+       <div class="w">
+      <div class="l_sub_new">
+        <div class="l_sub_new_1">
+      <a href="javascript:;"><img src="./images/L_82.jpg" alt=""></a>
+    </div>
+        <div class="l_sub_new_2">
+          <h3><a href="javascript:;">首都电影院（金融街店）</a> </h3>
+          <p><span class="iconfont">&#xe6b6;</span>我常去</p>
+          <h4>北京市海淀区中关村大街19号新中关购物中心B1层</h4>
+          <h5>3D</h5>
+          <h6>VIP</h6>
+          <span>P</span> 
+        </div>
+       <div class="l_sub_new_3">
+           <span>￥</span>
+           <h2>29</h2>
+           <h5>元起</h5>
+         
+       </div> 
+       <div class="l_sub_border">
+          选座购票
+
+        </div>
+
+      </div>
+
+       </div>
+
+   
+      </div>
+      <div class="l_xp" style="width:600px;margin: 0 auto; z-index: 99; display: none; position: relative;z-index: 20;background-color: black">
+        <span id='screen'>
+         <p>
+            座位预定
+        </p >
+        </span>
+        <div id="seats">
+            <div class="seatsRaw">
+                <div class="seat">1</div>
+                <div class="seat">2</div>
+                <div class="seat">3</div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+               
+            </div>
+
+            <div class="seatsRaw">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+              
+            </div>
+
+            <div class="seatsRaw">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+              
+               
+            </div>
+
+            <div class="seatsRaw">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+
+
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+
+           
+
+        </div>
+    
+          
+        <div id="booking_desc">
+                <div class="booking_left">
+                    <p style="color: #FBBC53;font-weight: bold; font-size: larger;">您选中的座位 </p >
+                    <div id="selected_seat"></div>
+                    <br>
+                    <button id="bookNowButton" type="button" >现在预定</button>
+                    <div id="errMsg"></div>
+                </div>
+
+                <div class="booking_right">每个座位的单价: 300.00 元
+                    <br><br>
+                    <div id="total">总价：<span> 0 </span></div>
+                </div>
+             </div>
+
+
+        </div>
+      
+      <div class="l_sub">
+          <div class="w">
+         <div class="l_sub_new">
+           <div class="l_sub_new_1">
+         <a href="javascript:;"><img src="./images/L_94.jpg" alt=""></a>
+       </div>
+           <div class="l_sub_new_2">
+             <h3><a href="javascript:;">首都电影院（金融街店）</a> </h3>
+             <p><span class="iconfont">&#xe6b6;</span>我常去</p>
+             <h4>北京市海淀区中关村大街19号新中关购物中心B1层</h4>
+             <h5>3D</h5>
+             <h6>VIP</h6>
+             <span>P</span> 
+           </div>
+          <div class="l_sub_new_3">
+              <span>￥</span>
+              <h2>39</h2>
+              <h5>元起</h5>
+            
+          </div> 
+          <div class="l_sub_border">
+             选座购票
+   
+           </div>
+   
+         </div>
+   
+   
+          </div>
+   
+   
+         </div>
+
+     <div class="l_sub">
+            <div class="w">
+           <div class="l_sub_new">
+             <div class="l_sub_new_1">
+           <a href="javascript:;"><img src="./images/L_83.jpg" alt=""></a>
+         </div>
+             <div class="l_sub_new_2">
+               <h3><a href="javascript:;">金逸北京中关村店</a> </h3>
+               <p><span class="iconfont">&#xe6b6;</span>我常去</p>
+               <h4>北京市海淀区中关村大街19号新中关购物中心B1层</h4>
+               <h5>3D</h5>
+               <h6>VIP</h6>
+               <span>P</span> 
+             </div>
+            <div class="l_sub_new_3">
+                <span>￥</span>
+                <h2>49</h2>
+                <h5>元起</h5>
+              
+            </div> 
+            <div class="l_sub_border">
+               选座购票
+     
+             </div>
+     
+           </div>
+    
+            </div>
+     
+     </div>
+
+      <div class="l_sub">
+              <div class="w">
+             <div class="l_sub_new">
+               <div class="l_sub_new_1">
+             <a href="javascript:;"><img src="./images/L_95.jpg" alt=""></a>
+           </div>
+               <div class="l_sub_new_2">
+                 <h3><a href="javascript:;">北京百丽宫影城国贸店</a> </h3>
+                 <p><span class="iconfont">&#xe6b6;</span>我常去</p>
+                 <h4>北京市海淀区中关村大街19号新中关购物中心B1层</h4>
+                 <h5>3D</h5>
+                 <h6>VIP</h6>
+                 <span>P</span> 
+               </div>
+              <div class="l_sub_new_3">
+                  <span>￥</span>
+                  <h2>69</h2>
+                  <h5>元起</h5>
+                
+              </div> 
+              <div class="l_sub_border">
+                 选座购票
+       
+               </div>
+       
+             </div>
+       
+       
+              </div>
+       
+       
+     </div>
+
+       <div class="l_sub">
+                <div class="w">
+               <div class="l_sub_new">
+                 <div class="l_sub_new_1">
+               <a href="javascript:;"><img src="./images/L_90.jpg" alt=""></a>
+             </div>
+                 <div class="l_sub_new_2">
+                   <h3><a href="javascript:;">英嘉星美影城</a> </h3>
+                   <p><span class="iconfont">&#xe6b6;</span>我常去</p>
+                   <h4>北京市海淀区中关村大街19号新中关购物中心B1层</h4>
+                   <h5>3D</h5>
+                   <h6>VIP</h6>
+                   <span>P</span> 
+                 </div>
+                <div class="l_sub_new_3">
+                    <span>￥</span>
+                    <h2>39</h2>
+                    <h5>元起</h5>
+                  
+                </div> 
+                <div class="l_sub_border">
+                   选座购票
+         
+                 </div>
+         
+               </div>
+         
+                </div>
+         
+         
+       </div>
+
+
+ 
+        <!-- //时光电影卡 -->
+
+        <div class="l_banner">
+        <div class="w">
+         <div class="l_banner_l">
+          <a href="javascript:;"><img src="./images/L_107.png" alt=""></a> 
+         </div>
+         <div class="l_banner_r">
+          <a href="javascript:;"><img src="./images/L_108.png" alt=""></a>
+         </div>
+        <div class="l_banner_b">
+            <h2>影院商务合作:</h2>
+            <ul>
+              <li>影院开业</li>
+              <li>影讯合作</li>
+              <li class="l_banner_li">在线购票</li>
+            </ul>
+
+            <span><a href="javascript:;">联系时光网</a> </span>
+           <p>客服电话：4006-118-118</p>
+
+        </div>
+
+       <!-- //选票功能 -->
+          <script>
+            $(function(){
+
+         
+            $(document).ready(function(){
+        
+                        var seat_num ;
+                        var total_bill      = 0 ;
+                        var pricePerTicked  = 300;//单价
+                        var maximumSeats    =   5;//预定座位数目的最大限制
+        
+                        $('#bookNowButton').hide(); // 隐藏预定按钮
+        
+                        $('.seat').each(function() {       
+                            var column_num = parseInt( $(this).index() ) + 1;
+                            var row_num = parseInt( $(this).parent().index() )+1;    
+                            seat_num = row_num+"-"+column_num ;  
+                            $(this).text(seat_num); // 座位号
+                            $(this).addClass("seat"+seat_num);  // 个座位加css
+                        });
+        
+                        $("#seats .seat").click(function() {  
+                                $('#errMsg').html('');
+                                if($(this).hasClass('select')){ // 检查是否被选中
+                                    $(this).removeClass('select'); //如果选中了，移除选中的css
+                                    $(this).css('background-color','#D8D8D8'); // 重新加个背景
+        
+                                    var currentSeatClass = $(this).attr('class').split(' ')[1]; 
+        
+                                    console.log(currentSeatClass);
+                                     $( "#selected_seat ."+currentSeatClass ).remove();
+        
+                                }else if($(".your_selected_seat").length<maximumSeats && !$(this).hasClass('select')){ // 检查预定的座位数目是否超出限制
+                                    $(this).css('background-color','#71DCAA'); // 加背景颜色
+                                    $(this).addClass("select"); // 添加选中css
+        
+        
+                                    var column_num = parseInt( $(this).index() ) + 1;
+                                    var row_num = parseInt( $(this).parent().index() )+1;    
+                                    $( "#selected_seat" ).append("<span class='your_selected_seat seat"+row_num+"-"+column_num+" '> 座位号: <b style='color:#EAABFF'>" + row_num+"-"+column_num +"</b> </br></span>");
+                                }else {
+                                    $('#errMsg').html('您选中的座位已经超过限制.');    
+                                }
+        
+                                if($(".your_selected_seat").length){
+                                    $('#bookNowButton').fadeIn(1000);
+                                }else {
+                                    $('#bookNowButton').fadeOut(1000);
+                                }
+                                //计算总价
+                                total_bill = $(".your_selected_seat").length * pricePerTicked;
+                                $('#total > span').html(total_bill);
+                        });
+        
+        
+            //}
+        
+        
+        });
+       })
+        </script>
+        
+        
+        
+        
+        
+        </div>
+
+
+        </div>
+             <!-- //飞机 -->
+        <div id="shape">
+          <div class="shapeColor">
+            <div class="shapeFly">
+            </div>
+          </div>
+        </div>
+      
+        <!-- //结束 -->
+ <!-- 尾部部分 -->
+ <div class="footer">
+    <div class="footer-top w clearfix">
+            <div class="footer-top-cl1">
+                <i></i>
+                <ul>
+                    <li>
+                        <a href="#">加入我们</a>
+                        <a href="#">联系我们</a>
+                    </li>
+                    <li>
+                        <a href="#">站务论坛</a>
+                        <a href="#">问题反馈</a>
+                    </li>
+                    <li>
+                        <a href="#">社区准则</a>
+                        <a href="#">网站地图</a>
+                    </li>
+                    <li>
+                        <a href="#">隐私政策</a>
+                        <a href="#">English</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-top-cl2">
+                <dl>
+                    <dt>
+                        <a href="#">栏目</a>
+                    </dt>
+                    <dd>
+                        <a href="#">新闻</a>
+                    </dd>
+                    <dd>
+                        <a href="#">影院</a>
+                    </dd>
+                    <dd>
+                        <a href="#">商城</a>
+                    </dd>
+                    <dd>
+                        <a href="#">社区</a>
+                    </dd>
+                </dl>
+                <dl class="footer-top-dl">
+                    <dt>
+                        <a href="#">推荐</a>
+                    </dt>
+                    <dd>
+                        <a href="#">观影指南</a>
+                        <a href="#">电影票房</a>
+                    </dd>
+                    <dd>
+                        <a href="#">时光对话</a>
+                        <a href="#">新片预告</a>
+                    </dd>
+                    <dd>
+                        <a href="#">特色榜单</a>
+                        <a href="#">电影猜猜猜</a>
+                    </dd>
+                    <dd>
+                        <a href="#">全球拾趣</a>
+                        <a href="#">卡片大富翁</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href="#">关注我们</a>
+                    </dt>
+                    <dd>
+                        <a href="#">
+                            <i></i>
+                        </a>
+                    </dd>
+                    <dd>
+                        <a href="#">
+                            <b></b>
+                        </a>
+                    </dd>
+                    <dd>
+                        <a href="#">
+                            <s></s>
+                        </a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="footer-top-cl3">
+                <div class="footer-top-l">
+                    <s>时光周刊</s>
+                    <span>第171期</span>
+                    <img src="images/a_footer1.jpg" alt="">
+                    <input type="text" id="txt" value="邮箱地址">
+                    <input type="button" value="订阅" id="btn">
+                </div>
+                <div class="footer-top-r">
+                    <s>手机购票</s>
+                    <span>方便 实惠</span>
+                    <i></i>
+                    <p>扫描二维码 下载客户端</p>
+                </div>
+            </div>
+    </div>
+    <div class="footer-bottom w">
+        <p>违法和不良信息举报电话：4006-118-118 举报邮箱：service@mtime.com</p>
+        <p>北京动艺时光网络科技有限公司Copyright 2006-2019 Mtime.com Inc. All rights reserved</p>
+        <span>京ICP证050715号</span>
+        <span>&nbsp&nbsp网络视听许可证0108265号</span>
+        <span>&nbsp&nbsp网络文化经营许可证</span>
+        <span>&nbsp&nbsp广播电视节目制作经营许可证(京)字第1435号&nbsp&nbsp</span>
+        <s></s>
+        <span>京公网安备：11010502032542号</span>
+        <div class="footer-bottom-box">
+            <i></i>
+            <img src="images/a_footer2.png" alt="">
+            <img src="images/a_footer3.png" alt="">
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
